@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="159.0" prefWidth="358.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.kusmp.commander.PopupController">
+   <children>
+      <ProgressBar fx:id="progressBar" layoutX="47.0" layoutY="71.0" prefWidth="200.0" progress="0.0" />
+      <ProgressIndicator fx:id="indicator" layoutX="255.0" layoutY="60.0" progress="0.0" />
+      <Label layoutX="33.0" layoutY="22.0" text="Kopiowanie: " textFill="#42bbd6">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="cancelButton" layoutX="284.0" layoutY="120.0" mnemonicParsing="false" text="Button" />
+      <Label fx:id="nameLabel" layoutX="135.0" layoutY="22.0" prefHeight="27.0" prefWidth="200.0" text="Label" textFill="#42bbd6">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

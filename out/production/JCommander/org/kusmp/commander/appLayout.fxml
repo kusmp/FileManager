@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1177.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.kusmp.commander.Controller">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.0" minWidth="10.0" prefWidth="64.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="502.0" minWidth="10.0" prefWidth="486.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="77.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.0" minWidth="10.0" prefWidth="67.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="492.0" minWidth="10.0" prefWidth="483.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints maxHeight="86.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="86.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="263.0" minHeight="10.0" prefHeight="180.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="92.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="201.0" minHeight="10.0" prefHeight="153.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="139.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <TableView fx:id="leftTable" onMouseClicked="#clickLeftRow" prefHeight="200.0" prefWidth="520.0" GridPane.columnSpan="2" GridPane.rowIndex="2" GridPane.rowSpan="3">
+        <columns>
+          <TableColumn fx:id="leftIcon" prefWidth="27.0" />
+          <TableColumn fx:id="leftName" minWidth="0.0" prefWidth="229.0" text="Nazwa" />
+            <TableColumn fx:id="leftSize" prefWidth="102.0" text="Rozmiar" />
+            <TableColumn fx:id="leftModified" prefWidth="177.0" text="Data modyfikacji" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="cbPartition1" onAction="#cb1Changed" prefHeight="25.0" prefWidth="59.0" GridPane.halignment="RIGHT" />
+      <Button fx:id="btnSelect1" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#btnUp1Clicked" text="Do góry" GridPane.columnIndex="1">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/level-up.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnCopy" contentDisplay="TOP" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnCopyClicked" prefHeight="45.0" prefWidth="60.0" text="Kopiuj" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/002-copy.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="btnMove" contentDisplay="TOP" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnMoveClicked" prefHeight="45.0" prefWidth="60.0" text="Przenieś" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/arrows.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="btnDelete" contentDisplay="TOP" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDeleteClicked" prefHeight="45.0" prefWidth="60.0" text="Usuń" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/001-delete-button.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <TableView fx:id="rightTable" onMouseClicked="#clickRightRow" prefHeight="304.0" prefWidth="520.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="2" GridPane.rowSpan="3">
+        <columns>
+            <TableColumn fx:id="rightIcon" prefWidth="27.0" />
+          <TableColumn fx:id="rightName" prefWidth="229.0" text="Nazwa" />
+          <TableColumn fx:id="rightSize" prefWidth="102.0" text="Rozmiar" />
+            <TableColumn fx:id="rightModified" prefWidth="177.0" text="Data modyfikacji" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="cbPartition2" onAction="#cb2Changed" prefHeight="25.0" prefWidth="60.0" GridPane.columnIndex="3" GridPane.halignment="RIGHT" />
+      <Button fx:id="btnSelect2" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#btnUp2Clicked" text="Do góry" GridPane.columnIndex="4">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/level-up.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ComboBox fx:id="cbChangeLang" onAction="#cbChangeLangChanged" prefHeight="25.0" prefWidth="63.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <Label fx:id="rightLabel" prefHeight="17.0" prefWidth="332.0" text="Label" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin></Label>
+      <Label fx:id="leftLabel" prefHeight="17.0" prefWidth="333.0" text="Label" GridPane.columnSpan="2" GridPane.rowIndex="1">
+         <padding>
+            <Insets left="10.0" />
+         </padding></Label>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="5" GridPane.rowIndex="5">
+         <children>
+            <ProgressBar fx:id="pb" layoutX="335.0" layoutY="25.0" prefHeight="18.0" prefWidth="370.0" progress="0.0" />
+            <ProgressIndicator fx:id="pi" layoutX="715.0" layoutY="15.0" prefHeight="37.0" prefWidth="50.0" progress="0.0" />
+            <Button fx:id="btnCancel" layoutX="804.0" layoutY="22.0" mnemonicParsing="false" text="Anuluj" />
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>
